@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js">
+  </script>
+  <script src="components/bootstrap-datepicker/dist/js/bootstrap-datepicker.js">
+  </script>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="panel panel-default">
+      <div class="panel-body">
+
+        <form class="form-horizontal" method="POST">
+          <fieldset>
+
+            <!-- Form Name -->
+            <legend>Basic Widget</legend>
+
+            <!-- Text input-->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="test_input">Text Input</label>
+              <div class="col-md-4">
+                <input id="text_input" name="text_input" type="text" placeholder="First Name" class="form-control input-md">
+              </div>
+            </div>
+
+            <!-- Checkbox Input-->
+            <div class="form-group">
+              <label class="col-md-4 control-label" >Checkbox</label>
+              <div class="col-md-4">
+                <input id="checkbox_input" name="checkbox_input" type="checkbox" placeholder="Checkbox Input" class="form-control input-md">
+              </div>
+            </div>
+
+            <!-- Button -->
+            <div class="form-group">
+              <label class="col-md-4 control-label" >Button</label>
+              <div class="col-md-4">
+                <button id="a_button", type=button onclick="getElementById('demo').innerHTML=Date()">What is the time?</button>
+                <p id="demo"></p>
+              </div>
+            </div>
+
+            <!-- File Input-->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="file_input">File Input</label>
+              <div class="col-md-4">
+                <input id="file_input" name="file_input" type="file" placeholder="File Input" class="form-control input-md">
+              </div>
+            </div>
+
+            <!-- Color Input-->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="color_input">Color Input</label>
+              <div class="col-md-4">
+                <input id="color_input" name="color_input" type="color" placeholder="File Input" class="form-control input-md">
+              </div>
+            </div>
+          </fieldset>
+        </form>
+
+
+        <form class="form-horizontal" method="POST">
+          <fieldset>
+
+            <!-- Form Name -->
+            <legend>Conditional View</legend>
+
+            <div class="form-group">
+              <label class="col-md-4 control-label">Select Input</label>
+              <div class="col-md-4">
+                <select id="select_lang">
+                  <option>Python</option>
+                  <option>Go</option>
+                </select>
+
+                <h3 id="lang-1">Python</h3>
+                <h3 id="lang-2">Go</h3>
+              </div>
+            </div>
+          </fieldset>
+        </form>
+
+        <form class="form-horizontal">
+          <fieldset>
+
+            <!-- Form Name -->
+            <legend>Bootstrap</legend>
+
+            <div class="form-group">
+              <label class="col-md-4 control-label">DatePicker</label>
+              <div class="col-md-4">
+                <div class="datepicker_readwrite">
+                  <label class="control-label " for="date_readwrite">
+                    Bootstrap datepicker readwrite
+                  </label>
+                  <input class="form-control" id="date_readwrite" name="date_readwrite" autoclose="true" placeholder="MM/DD/YYYY"
+                    data-date-format="mm/dd/yyyy" type="text" />
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    $(document).ready(function () {
+      var date_in_readwrite = $('input[name="date_readwrite"]');
+      //our date input has the name or id
+      var container = $('.bootstrap-iso form').length > 0 ? $('.bootstrap-iso form').parent() : "body";
+      date_in_readwrite.datepicker({
+        format: 'mm/dd/yyyy',
+        container: container,
+        todayHighlight: true,
+        autoclose: true,
+      });
+    })
+  </script>
+
+
+</body>
+
+</html>
