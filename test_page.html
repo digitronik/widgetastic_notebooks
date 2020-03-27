@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/patternfly/3.23.1/css/patternfly.min.css" integrity="sha256-nNGxuG8p95S3RD1u5ABAy7lSfcf3gCQ9wNI5Q51lNB4=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/patternfly/3.23.1/css/patternfly-additions.css" integrity="sha256-JqQqupyMtGoBG/dyh3e8DjpScJ6G1iSCbqQTpPkKtjQ=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" integrity="sha256-3Jy/GbSLrg0o9y5Z5n1uw0qxZECH7C6OQpVBgNFYa0g=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/patternfly/3.23.1/js/patternfly.min.js" integrity="sha256-XI7ZZ/YpLWmMS6Kg6lkpgWT9sj1KC1DAq8Aw358n0zU=" crossorigin="anonymous"></script>
+  <!-- Include Date Picker -->
+  <script type="text/javascript"    src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+  <script src="components/bootstrap-datepicker/dist/js/bootstrap-datepicker.js"></script>
+  <!-- Include bootstrap treeview -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-treeview/1.2.0/bootstrap-treeview.min.js"></script>
+  <script src="components/bootstrap-treeview/dist/js/bootstrap-treeview.js"></script>
+  <!-- Include Charts -->
+  <script src=></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.11/c3.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="panel panel-default">
+      <div class="panel-body">
+
+        <form class="form-horizontal" method="POST">
+          <fieldset>
+
+            <!-- Form Name -->
+            <legend>Basic Widget</legend>
+
+            <!-- Text input-->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="test_input">Text Input</label>
+              <div class="col-md-4">
+                <input id="text_input" name="text_input" type="text" placeholder="Input please" class="form-control input-md">
+              </div>
+            </div>
+
+            <!-- Checkbox Input-->
+            <div class="form-group">
+              <label class="col-md-4 control-label" >Checkbox</label>
+              <div class="col-md-4">
+                <input id="checkbox_input" name="checkbox_input" type="checkbox" class="form-control input-md">
+              </div>
+            </div>
+
+            <!-- Button -->
+            <div class="form-group">
+              <label class="col-md-4 control-label" >Button</label>
+              <div class="col-md-4">
+                <button id="a_button", type=button onclick="getElementById('demo').innerHTML=Date()">What is the time?</button>
+                <p id="demo"></p>
+              </div>
+            </div>
+
+            <!-- Color Input-->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="color_input">Color Input</label>
+              <div class="col-md-4">
+                <input id="color_input" name="color_input" type="color" placeholder="File Input" class="form-control input-md">
+              </div>
+            </div>
+          </fieldset>
+        </form>
+
+
+        <form class="form-horizontal" method="POST">
+          <fieldset>
+
+            <!-- Form Name -->
+            <legend>Conditional View Example</legend>
+
+            <div class="form-group">
+              <label class="col-md-4 control-label">Select Input</label>
+              <div class="col-md-4">
+                <select id="select_lang">
+                  <option value="python">Python</option>
+                  <option value="go">Go</option>
+                </select>
+
+                <h3 id="lang-1">Python</h3>
+                <h3 id="lang-2">Go</h3>
+              </div>
+            </div>
+          </fieldset>
+        </form>
+
+
+
+        <form class="form-horizontal" method="POST">
+          <fieldset>
+            <legend>Parametrized View Example</legend>
+
+            <div class="form-group widget_selector">
+              <div class="col-md-8 wt_item">
+                <label>widget 1</label>
+                <input type="checkbox" >
+              </div>
+              <div class="col-md-8 wt_item">
+                <label>widget 2</label>
+                <input type="checkbox" >
+              </div>
+              <div class="col-md-8 ws_item">
+                <label>widget 3</label>
+                <input type="checkbox" >
+              </div>
+              <div class="col-md-8 ws_item">
+                <label>widget 4</label>
+                <input type="checkbox" >
+              </div>
+            </div>
+          </fieldset>
+        </form>
+
+
+        <form class="form-horizontal">
+
+          <fieldset>
+            <!-- Form Name -->
+            <legend>Bootstrap / Patternfly</legend>
+            <div class="form-group">
+                <!------------------------------- Spark Line Chart -------------------------------------->
+              <label class="col-md-2 control-label">Spark Line Chart</label>
+              <div class="col-md-8">
+                <div id="sparklineChart" class="chart-pf-sparkline"></div>
+                <div>Less than one year remaining</div>
+                <script>
+                var c3ChartDefaults = $().c3ChartDefaults();
+                var sparklineChartConfig = c3ChartDefaults.getDefaultSparklineConfig();
+                sparklineChartConfig.bindto = '#sparklineChart';
+                sparklineChartConfig.data = {
+                columns: [
+                ['%', 10, 14, 12, 20, 31, 27, 44, 36, 52, 55, 62, 68, 69, 88, 74, 88, 91],
+                ],
+                type: 'area'
+                };
+                var sparklineChart = c3.generate(sparklineChartConfig);
+                </script>
+              </div>
+
+              <div class="form-group">
+                <label class="col-md-4 control-label">DatePicker</label>
+                <div class="col-md-4">
+                  <div class="datepicker_readonly">
+                    <label class="control-label " for="date_reaonly">
+                      Bootstrap datepicker readwrite
+                    </label>
+                      <input class="form-control" id="date_readonly" name="date_readonly" readonly="readonly" autoclose="true" placeholder="MM/DD/YYYY" data-date-format="mm/dd/yyyy" type="text"/>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </fieldset>
+        </form>
+
+
+      </div>
+    </div>
+  </div>
+
+<script>
+    $(document).ready(function(){
+      var date_in_readonly=$('input[name="date_readonly"]');
+      var date_in_readwrite=$('input[name="date_readwrite"]');
+      var date_in_patternfly=$('input[id="patternfly_dp"]')
+      //our date input has the name or id
+      var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+      date_in_readonly.datepicker({
+          format: 'mm/dd/yyyy',
+          container: container,
+          todayHighlight: true,
+          autoclose: true,
+      })
+      date_in_readwrite.datepicker({
+          format: 'mm/dd/yyyy',
+          todayHighlight: true,
+          autoclose: true,
+      })
+      date_in_patternfly.datepicker({
+        autoclose: true,
+        orientation: "top auto",
+        todayBtn: "linked",
+        todayHighlight: true
+      });
+  })
+  </script>
+
+
+</body>
+</html>
