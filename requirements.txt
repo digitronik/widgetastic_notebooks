@@ -1,3 +1,4 @@
 jupyter
 widgetastic.core
 widgetastic.patternfly
+webdriver_kaifuku
