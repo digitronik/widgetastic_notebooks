@@ -1,4 +1,5 @@
 jupyter
+selenium==4.21.0
 widgetastic.core
 widgetastic.patternfly
 webdriver_kaifuku
